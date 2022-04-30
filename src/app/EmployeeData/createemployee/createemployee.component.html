@@ -1,0 +1,51 @@
+<!-- <div class="container m-5">
+    <h1 class="text-success bg-warning">{{title}}</h1>
+    <hr>
+    <form #empForm="ngForm" (ngSubmit)="creatForm(empForm)">
+       Angular Generted Form:  {{empForm.value | json}}<br>
+        Class Generted Form -{{empdata  | json}}
+        <div class="form-group col-6">
+            <label for="fname">FirstName</label>
+            <input type="text" class="form-control" #fname="ngModel" name="fname" [(ngModel)]="empdata.fname"
+            required [class.is-invalid]="fname.invalid && fname.touched" >
+            <span class="text-danger" *ngIf="fname.invalid && fname.touched">
+                FirstName is required
+            </span> -->
+           <!-- <h1> {{fname.className}}</h1> -->
+        <!-- </div>
+        <div class="form-group col-6">
+            <label for="lname">LastName</label>
+            <input type="text" class="form-control" #lname name="lname" [(ngModel)]="empdata.lname" >
+        </div>
+    <div class="form-group col-6">
+        <label>Salary</label>
+        <input type="text" class="form-control" name="salary" [(ngModel)]="empdata.salary">
+    </div>
+    <div class="form-group col-6">
+        <label>HRA</label>
+        <input type="text" class="form-control" name="hra" [(ngModel)]="empdata.hra">
+    </div>
+    <div class="form-group col-6">
+        <label>DA</label>
+        <input type="text" class="form-control" name="da" [(ngModel)]="empdata.da">
+    </div>
+    <div class="form-group col-6">
+        <label>HireDate</label>
+        <input type="text" class="form-control" name="hdate" [(ngModel)]="empdata.hiredate">
+    </div>
+    <div class="form-group col-6 mt-2">
+        <select class="form-select" [(ngModel)]="empdata.designation" #desg="ngModel" name="desg"
+        required [class.is-invalid]="dhaserr && desg.touched"
+        (blur)="checkselect(desg.value)">
+            <option selected [ngValue]="null">Select Designation</option>
+            <option *ngFor="let d of designation" [ngValue]="d.name">{{d.name}}</option>
+        </select>
+    </div>
+    <span *ngIf="dhaserr" class="text-danger">
+        Please select designation
+    </span>
+   <br>
+        <input type="submit" value="Save" class="btn btn-primary mt-2"
+        [disabled]="empForm.form.invalid || dhaserr">
+    </form>
+</div> -->

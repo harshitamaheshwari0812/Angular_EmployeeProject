@@ -1,0 +1,26 @@
+
+<table border style="border-collapse:collapse">
+    <tr>
+        <th>Sr. No</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>HRA</th>
+        <th>DA</th>
+        <th>HireDate</th>
+   
+    </tr>
+    <tr *ngFor="let emp of Employee;index as i " >
+        <td>{{i+1}}</td>
+        <td>{{emp.fname }}</td>  
+        <td>{{emp.lname }}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.hra}}</td>
+        <td>{{emp.da}}</td>
+        <td>{{emp.hiredate}}</td>
+    
+    </tr>
+
+</table> 

@@ -1,0 +1,57 @@
+<p appCustomdirective>employee works!</p>
+
+<!-- <img src="{{imagePath}}"> -->
+<!-- <img src="assets/images/{{imagePath1}}"> -->
+
+<!-- <button disabled="{{isDisabled}}">Click me</button>
+
+<button [disabled]="isDisabled">Click me</button>
+<button bind-disabled="isDisabled">Click me</button>
+<input type="text" value="happy" id="h"> -->
+
+<!-- <div *ngFor="let emp of EmployeeList">
+    <h2>{{emp.fname}} {{emp.gender}}</h2>
+</div> -->
+
+<!-- <table border>
+    <tr>
+        <th>Sr. No</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>HireDate</th>
+    </tr>
+    <tr *ngFor="let emp of EmployeeList;index as i">
+        <td>{{i+1}}</td>
+        <td>{{emp.fname}}</td>
+        <td>{{emp.lname}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.hiredate}}</td>
+    </tr>
+</table> -->
+
+<button (click)="clickfun($event)">Click me</button><br>
+<!-- <button on-click="clickfun()">Click me</button><br> -->
+
+
+<!-- <select (change)="setName($event)">
+    <option selected disabled>Select Name</option>
+    <option *ngFor="let emp of EmployeeList"
+    value="{{emp.fname}}">{{emp.fname}}</option>
+</select> -->
+
+<!-- <div [ngSwitch]="choose" [style.backgroundColor]="applyredcolor"> -->
+    <!-- <div [ngSwitch]="choose" [ngStyle]="myStyles"> -->
+    <!-- <h3 *ngSwitchCase="'select'">please select</h3> -->
+    <!-- <h3 *ngSwitchCase="'Arohi'">{{EmployeeList[0].salary}}</h3>
+    <h3 *ngSwitchCase="'Arun'">Hello Arun</h3>
+    <h3 *ngSwitchCase="'Seema'">Hello Seema</h3>
+    <h3 *ngSwitchDefault>Invalid</h3>
+</div>
+
+<p [style.font-size.px]="30">this is my para</p>
+<br>
+<p [ngClass]="applycss">this is para for class binding demo</p> -->
+<add-employee></add-employee>

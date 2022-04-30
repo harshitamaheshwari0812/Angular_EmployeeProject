@@ -1,0 +1,72 @@
+
+<div class="container m-5">
+    <h1 class="text-primary">{{editdata?'Edit':'Add'}}  Employee</h1>
+    <hr>
+<form (ngSubmit)="AddEmp()" #empform="ngForm" >
+    {{empdata | json}}
+    <div class="row col-6">
+    <div class="form-group col-6">
+        <label>First Name</label>
+        <input type="text" class="form-control" name="fname" [(ngModel)]="empdata.fname" 
+        #fname="ngModel"  required pattern="^([a-zA-Z]+)$" [class.is-invalid]="fname.invalid && fname.touched" > 
+        <!-- <div *ngIf="fname.errors && fname.invalid && fname.touched"> -->
+        <!-- <span class="text-danger" *ngIf="fname.errors.pattern">First Name is required</span> -->
+    <!-- </div> -->
+
+    <div *ngIf="fname.touched">
+        <p *ngIf="fname.errors?.['required']">Email is a required field!</p>
+        <p *ngIf="fname.errors?.['pattern']">This is not a valid Email!!!</p>
+      </div>
+</div>
+    <div class="form-group col-6">
+        <label>Last Name</label>
+        <input type="text" class="form-control" name="lname" [(ngModel)]="empdata.lname">
+    </div></div>
+    <div [class.is-invalid]="gender.invalid && gender.touched">
+    <div class="form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" #gender="ngModel" required value="male" [(ngModel)]="empdata.gender">
+        <label class="form-check-label px-2" >
+          Male
+        </label>
+    </div>
+    <div class="form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" value="female" #gender="ngModel" required [(ngModel)]="empdata.gender">
+        <label class="form-check-label px-2" >
+          Female
+        </label>
+    </div>
+    <span  [class.d-none]="gender.valid || gender.untouched">
+        Gender is required
+      </span>
+    </div>
+    <div class="form-group col-6">
+        <label>Salary</label>
+        <input type="text" class="form-control" name="salary" [(ngModel)]="empdata.salary">
+    </div>
+    <div class="form-group col-6">
+        <label>HRA</label>
+        <input type="text" class="form-control" name="hra" [(ngModel)]="empdata.hra">
+    </div>
+    <div class="form-group col-6">
+        <label>DA</label>
+        <input type="text" class="form-control" name="da" [(ngModel)]="empdata.da">
+    </div>
+    <div class="form-group col-6">
+        <label>HireDate</label>
+        <input type="text" class="form-control" name="hdate" [(ngModel)]="empdata.hiredate">
+    </div>
+    <div class="form-group col-6">
+        <label>Designation</label>
+        <select class="form-select" [(ngModel)]="empdata.designation" name="designation" #desg="ngModel" required
+         (blur)="checkDesg(desg.value)"  [class.is-invalid]="haserr && desg.touched">
+            <option selected   [ngValue]="null">Select Designation</option>
+            <option *ngFor="let d of designation" [ngValue]="d.name">{{d.name}}</option>
+        </select>
+        <span class="text-danger" [class.d-none]="!haserr || desg.untouched">select Designation</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2" [disabled]="empform.form.invalid || haserr">
+        {{editdata?'Update':'Submit'}}
+    </button>
+</form>
+</div>

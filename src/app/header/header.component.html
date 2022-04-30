@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">CRM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" 
+            routerLink="/home" routerLinkActive="text-primary bg-warning">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addemployee" routerLinkActive="text-primary bg-warning">Add Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/emplist" routerLinkActive="text-primary bg-warning">View Employee</a>
+          </li>
+         
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+  <carousel [interval]="intv">
+    <slide>
+      <img src="assets/images/bungee.jpg" alt="first slide" 
+      style="display: block; width: 100%;height:250px">
+    </slide>
+    <slide>
+      <img src="assets/images/bungee1.jpg" alt="second slide" 
+      style="display: block; width: 100%;height:250px">
+    </slide>
+    <slide>
+      <img src="assets/images/AppleSmartWatch1.jpg" alt="third slide" 
+      style="display: block; width: 100%;height:250px">
+    </slide>
+  </carousel>

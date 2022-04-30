@@ -1,0 +1,7 @@
+<!-- <input type="text" [(ngModel)]="username" placeholder="entername">
+{{username}} -->
+
+<input type="text" #uname value="{{username}}"> 
+<button (click)="fetchValue(uname)">Fetch TextBox Value</button>
+
+

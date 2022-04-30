@@ -1,0 +1,33 @@
+
+<div class="container mt-2">
+<app-emp-count 
+[all]="getTotalEmp()"
+[male]="getTotalMaleEmp()"
+[female]="getTotalFemaleEmp()"
+(OnRadioBtnSelectionChange)="OnRadioButtonChanged($event)"></app-emp-count>
+<table border style="border-collapse:collapse">
+    <tr>
+        <th>Sr. No</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>HireDate</th>
+    </tr>
+<ng-container *ngFor="let emp of Employee;index as i">
+    <tr  *ngIf="radiobtnvalue=='all' || radiobtnvalue==emp.gender" 
+    (click)="OnSelect(i)" 
+    [class.selected]="isSelect(i)">
+        <td>
+            {{i+1}}
+            <!-- <a [routerLink]="['/emplist',i]" class="text-dark text-decoration-none">{{i+1}}  </a> -->         
+        </td>
+        <td>{{emp.fname}}</td>
+        <td>{{emp.lname}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.hiredate}}</td>
+    </tr>
+</ng-container>
+</table> 
+</div>

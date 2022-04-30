@@ -1,0 +1,36 @@
+
+Add FirstName<input type="text" #fn>
+<button (click)="AddFname(fn)">Add</button><br>
+
+<input type="text" placeholder="Enter name to search" [(ngModel)]="searchvalue">
+<br><br>
+<table border style="border-collapse:collapse">
+    <tr>
+        <th>Sr. No</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>HRA</th>
+        <th>DA</th>
+        <th>HireDate</th>
+        <th>Yr of Exp</th>
+        <th>Total Salaray</th>
+    </tr>
+    <tr *ngFor="let emp of Employee |filter:searchvalue index as i " >
+        <td>{{i+1}}</td>
+        <td>{{emp.fname | uppercase | title:emp.gender  }}</td>  
+        <td>{{emp.lname | lowercase | slice:-3:-1}}</td>
+        <td>{{emp.gender |titlecase}}</td>
+        <td>{{emp.salary |currency:'INR':true:'1.0-0'}}</td>
+        <td>{{emp.hra}}</td>
+        <td>{{emp.da}}</td>
+        <td>{{emp.hiredate | date:'dd-MMM-yyyy hh:mm:ss' | uppercase}}</td>
+        <td>{{emp.hiredate | exp}}</td>
+        <td>{{emp.salary | totalsal:emp.hra:emp.da}}</td>
+    </tr>
+
+</table> 
+
+
+<!-- {{Employee[0].salary | percent:'1.0-0'}} -->

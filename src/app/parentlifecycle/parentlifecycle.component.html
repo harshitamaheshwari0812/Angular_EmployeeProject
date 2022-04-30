@@ -1,0 +1,7 @@
+<input type="text" #val >
+<button (click)="changeValue(val)">Change Child Value</button>
+<div style="border:2px solid blue" *ngIf="togglebtn">
+<app-childlifecycle [txtvalue]="value">{{value}}</app-childlifecycle>
+</div>
+<br>
+<button (click)="destroy()">Destroy Child Component</button>

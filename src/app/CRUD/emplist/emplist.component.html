@@ -1,0 +1,38 @@
+
+<div class="container">
+    <h3  class="bg-danger">{{errorMsg}}</h3>
+<table class="table table-bordered" border>
+    <tr class="bg-primary">
+        <th>Sr. No</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>HireDate</th>
+        <th>HRA</th>
+        <th>DA</th>
+        <th>Designation</th>
+        <th>Actions</th>
+    </tr>
+<ng-container *ngFor="let emp of Employee;index as i" >
+    <tr  *ngIf="radiobtnvalue=='all' || radiobtnvalue==emp.gender" 
+    (click)="onSelect(i)" [class.bg-primary]="isSelected(i)">
+        <td>{{emp.id}}<img src={{emp.image}}></td>
+        <td>{{emp.fname}}</td>
+        <td>{{emp.lname}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.hiredate}}</td>
+        <td>{{emp.hra}}</td>
+        <td>{{emp.da}}</td>
+        <td>{{emp.designation}}</td>      
+        <td>
+            <button type="button" class="btn btn-success bg-success m-2" (click)="EditEmp(emp.id)">
+                <i class="bi bi-pencil-square"></i></button>
+            <button type="button" class="btn btn-danger bg-danger m-2"
+            (click)="DeleteEmp(emp.id)"><i class="bi bi-trash3-fill"></i></button>
+        </td> 
+    </tr>
+</ng-container>
+</table> 
+</div>

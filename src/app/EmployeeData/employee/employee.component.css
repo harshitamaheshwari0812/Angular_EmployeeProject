@@ -1,0 +1,14 @@
+.red{
+    background-color: blue;
+    color:red;
+}
+
+.blue{
+    background-color: red;
+    color:blue
+}
+
+.size{
+    font-size: 40px;
+    text-decoration: overline;
+}

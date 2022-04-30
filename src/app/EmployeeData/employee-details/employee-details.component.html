@@ -1,0 +1,17 @@
+<div class="container">
+<p>employee-details works!</p>
+<button type="button" (click)="goNext()" class="btn btn-warning" 
+(click)="contactdetails()">Contact Details of Employee ID ={{empid}}</button><br>
+
+
+<button type="button" (click)="goToEmpList()" class="btn btn-primary" >Back</button>
+
+
+
+<button type="button" (click)="goPrevious()" class="btn btn-primary m-2" >Previous</button>
+<button type="button" (click)="goNext()" class="btn btn-primary" >Next</button>
+
+<h1>Employee ID is = {{empid}}</h1>
+
+<router-outlet></router-outlet>
+</div>

@@ -1,0 +1,22 @@
+<div [ngStyle]="myStyle">
+    <input type="radio" name="employees" (click)="setStyle('F')" checked>Full Time Employees
+    <input type="radio" name="employees" (click)="setStyle('P')">Part Time Employees
+</div>
+<br><table border style="border-collapse:collapse">
+    <tr>
+        <th>Sr. No</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Gender</th>
+        <th>{{toggleButton?'Salary':'Rate'}}</th>
+        <th *ngIf="toggleButton">HireDate</th>
+    </tr>
+    <tr *ngFor="let emp of EmployeesList;index as i">
+        <td>{{i+1}}</td>
+        <td>{{emp.fname}}</td>
+        <td>{{emp.lname}}</td>
+        <td>{{emp.gender}}</td>
+        <td *ngIf="toggleButton">{{emp.salary}}</td><td *ngIf="!toggleButton">{{emp.rate}}</td>
+        <td *ngIf="toggleButton">{{emp.hiredate}}</td>
+    </tr>
+</table> 

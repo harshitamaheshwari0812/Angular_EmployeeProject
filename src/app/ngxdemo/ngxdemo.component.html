@@ -1,0 +1,9 @@
+<alert type="success" [dismissible]="dismiss" >
+    <strong>Well done!</strong> You successfully read this important alert message.
+  </alert>
+
+  <alert [type]="alerts.type" [dismissOnTimeout]="alerts.timeout" [dismissible]="alerts.dismissalert">
+    {{ alerts.msg }}</alert>
+
+    <timepicker [(ngModel)]="mytime"></timepicker>
+<!-- <pre class="alert alert-info">Time is: {{mytime}}</pre> -->

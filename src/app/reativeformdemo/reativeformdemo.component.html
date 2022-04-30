@@ -1,0 +1,96 @@
+<div class="container m-5">
+    <h1>{{heading}}</h1>
+    <hr>
+    <form [formGroup]="employeeForm" 
+    (ngSubmit)="OnSubmit()">
+        <div class="form-group col-6">
+            <label>FullName</label>
+            <input type="text" class="form-control" formControlName="fullName" 
+            [class.is-invalid]="getfullname?.invalid &&  
+            getfullname?.touched">
+        <div *ngIf="getfullname?.invalid &&  
+        getfullname?.touched">
+            <span *ngIf="getfullname &&
+             getfullname.errors?.['required']" class="text-danger" >
+                Name is required</span>
+            <span *ngIf="getfullname && 
+            getfullname.errors?.['minlength'] ||
+                getfullname &&  
+                getfullname.errors?.['maxlength'] " class="text-danger" >
+            min 2 and max 10 char allowed</span>
+            <span *ngIf="getfullname &&
+            getfullname.errors?.['invalidname']" class="text-danger" >
+               {{getfullname.value}} Name is not allowed</span>
+        </div>
+    </div>
+        <div class="form-group col-6">
+            <label>Email</label>
+            <input type="text" class="form-control" 
+            formControlName="Email" [class.is-invalid]="getEmail?.invalid &&  
+            getEmail?.touched">
+            <span *ngIf="getEmail && getEmail.errors?.['invalidemail'] &&  getEmail?.touched" 
+            class="text-danger" >Invalid Email</span>
+        </div>
+
+        <div class="form-group col-6">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="pwd">
+        </div>
+        <div class="form-group col-6">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" formControlName="cpwd" 
+            [class.is-invalid]="employeeForm.errors?.['mismatch'] && employeeForm?.invalid &&  employeeForm?.touched">
+            <span *ngIf="employeeForm && employeeForm.errors?.['mismatch'] &&  employeeForm?.touched" 
+            class="text-danger" >pwd and cpwd does not match</span>
+        </div>
+        <div class="form-group">
+            <div class="m-2">
+              <button type="button" class="btn btn-primary" (click)="AddSkillBtn()">
+                Add Skill
+              </button>
+            </div>
+          </div>
+          <div formArrayName="skills" *ngFor="let s of getSkill.controls;let i=index" class="m-2">
+              <hr *ngIf="i>0">
+          <div [formGroupName]="i">
+            <div class="row" >
+            <div class="form-group col-2">
+            <input type="text" formControlName="skillname" class="form-control" placeholder="skillname"
+            [class.is-invalid]="s.get('skillname')?.invalid && s.get('skillname')?.touched">   
+            <span *ngIf="s.get('skillname')?.invalid && s.get('skillname')?.touched" class="text-danger">
+                Skillname is required</span></div>
+            <div class="form-group col-2">
+            <input type="text" formControlName="exp" class="form-control " placeholder="experience">
+            </div>
+            <div class="form-group col-4">
+            <input type="radio" formControlName="proficiency" class="form-check-inline" value="beginner">beginner
+            <input type="radio" formControlName="proficiency" class="form-check-inline" value="intermediate">intermediate
+            <input type="radio" formControlName="proficiency" class="form-check-inline" value="advanced">advanced<br>
+        </div>
+        <div class="form-group col-2" *ngIf="getSkill.length>1">
+            <button type="button" class="btn btn-danger"><i class="bi bi-trash"
+                (click)="removeformgroup(i)"></i></button>
+        </div>
+        </div>
+    </div>
+    </div>
+           
+        
+        
+        <input type="submit" value="Add" class="btn btn-primary m-2">
+            <input type="button" value="Load Data" class="btn btn-primary m-2" (click)="loaddata()">
+    </form>
+
+    <table class="table table-bordered" border>
+        <tr>
+            <td>
+                Dirty-{{employeeForm.dirty}}
+            </td>
+            <td>Touched-{{employeeForm.touched}}</td>
+            <td>Invalid-{{employeeForm.invalid}}</td>
+        </tr>
+        <tr>
+            <td colspan="3">Form Data -{{employeeForm.value | json}}</td>
+        </tr>
+    </table>
+</div>

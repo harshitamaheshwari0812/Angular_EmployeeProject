@@ -1,0 +1,82 @@
+{
+  "Employees": [
+    {
+      "id": 1,
+      "fname": "Arohi",
+      "lname": "Maheshwari",
+      "gender": "female",
+      "salary": "350000",
+      "hiredate": "12-09-2018",
+      "hra": 2000,
+      "da": 1000,
+      "designation": "Tester",
+      "image":"assets/images/bungee.jpg"
+    },
+    {
+      "id": 2,
+      "fname": "Arun",
+      "lname": "Verma",
+      "gender": "male",
+      "salary": "50000",
+      "hiredate": "10-10-2001",
+      "hra": 2000,
+      "da": 1000,
+      "designation": "Manager"
+    },
+    {
+      "id": 3,
+      "fname": "Seema",
+      "lname": "Sharma",
+      "gender": "female",
+      "salary": 15000,
+      "hiredate": "1-08-2010",
+      "hra": 2000,
+      "da": 1000,
+      "designation": "Developer"
+    },
+    {
+      "id": 5,
+      "fname": "Ivan",
+      "lname": " Bay",
+      "gender": "male",
+      "salary": 20000,
+      "hiredate": "30-01-2017",
+      "hra": 2000,
+      "da": 1000,
+      "designation": "Developer"
+    },
+    {
+      "fname": "Seema",
+      "lname": "Menon",
+      "gender": "female",
+      "salary": "40000",
+      "hra": "19000",
+      "da": "6000",
+      "hiredate": "10-1-2021",
+      "designation": "Manager",
+      "id": 6
+    },
+    {
+      "fname": "ram",
+      "lname": "sharma",
+      "gender": "male",
+      "salary": "877656",
+      "hra": "234",
+      "da": "1000",
+      "hiredate": "12-01-2001",
+      "designation": "Admin",
+      "id": 7
+    },
+    {
+      "fname": "dsfsf",
+      "lname": "sdsd",
+      "gender": "female",
+      "salary": "11",
+      "hra": "11",
+      "da": "11",
+      "hiredate": "12-12-2002",
+      "designation": "Developer",
+      "id": 8
+    }
+  ]
+}

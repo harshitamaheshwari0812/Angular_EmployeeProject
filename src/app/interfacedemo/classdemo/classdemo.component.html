@@ -1,0 +1,10 @@
+<!-- <p>classdemo works!</p> -->
+{{emp1.username}}<br>
+{{emp1  | json}}<br>
+{{emp1.getUsername()}}
+
+<div *ngFor="let e of emparray">
+    <!-- {{e |json}} -->
+    {{e.empid}} {{e.username}} {{e.email}} {{e.designation}}
+</div>
+
